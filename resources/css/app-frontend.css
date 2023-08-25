@@ -4,6 +4,8 @@
 
 @import '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
+@import './hexagonal-grid.css';
+
 @layer base {
     html {
         @apply text-gray-600;
@@ -41,4 +43,18 @@
     .text-danger {
         @apply text-red-500;
     }
+}
+.hexagonal-grid {
+  font-size: 0; /*disable white space between inline block element */
+}
+
+.hexagon {
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s)*1.1547);
+  display: inline-block;
+  font-size:initial;
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  background: red;
+  margin-bottom: calc(var(--m) - var(--s)*0.2885);
 }

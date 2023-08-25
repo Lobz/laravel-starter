@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.main {
+  display: flex; /* we will talk about this later ... */
+  --s: 100px;  /* size  */
+  --m: 4px;   /* margin */
+  --f: calc(var(--s) * 1.732 + 4 * var(--m) - 1px);
+  background: grey;
+}
+
+.container {
+  font-size: 0; /* disable white space between inline block element */
+   background: black;
+}
+
+.hexagon {
+  width: var(--s);
+  margin: var(--m);
+  height: calc(var(--s) * 1.1547);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: initial; /* we reset the font-size if we want to add some content */
+  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+  margin-bottom: calc(var(--m) - var(--s) * 0.2886); /* some negative margin to create overlap */
+}
+
+.container::before {
+  content: "";
+  width: calc(var(--s)/2 + var(--m));
+  float: left;
+  height: 100%;
+  shape-outside: repeating-linear-gradient(#0000 0 calc(var(--f) - 3px),#000 0 var(--f));
+  background: pink;
+}
+
+  .color1 {
+  	background: red;
+    }
+  .color2 {
+  	background: orange;
+    }
+  .color3 {
+  	background: yellow;
+    }
+</style>
+</head>
+<body>
+
+<div class="main">
+  <div class="container">
+    <div class="hexagon color1">hey this is too big</div>
+    <div class="hexagon color2">o</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">hey</div>
+    <div class="hexagon color2">obuddy dont mess this up</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">hey</div>
+    <div class="hexagon color2">o</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeey</div>
+    <div class="hexagon color2">o</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">hey</div>
+    <div class="hexagon color2">o</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">hey</div>
+    <div class="hexagon color2">lololololol</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">hey</div>
+    <div class="hexagon color2">o</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">hey</div>
+    <div class="hexagon color2">o</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">hey</div>
+    <div class="hexagon color2">oooooooooooooooooooooooooi</div>
+    <div class="hexagon color3">s</div>
+    <div class="hexagon color1">hey</div>
+    <div class="hexagon color2">o</div>
+    <div class="hexagon color3">s</div>
+    <!--etc. -->
+  </div>
+</div>
+
+</body>
+</html>
